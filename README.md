@@ -1,75 +1,185 @@
 # 🎬 Movie Recommendation System
 
-An end-to-end Machine Learning project that aims to recommend movies based on user preferences, movie characteristics, and rating patterns.
+An end-to-end Machine Learning project focused on building a personalized movie recommendation system using content-based filtering, collaborative filtering, and hybrid recommendation techniques.
 
-The project explores different recommendation techniques, including popularity-based recommendations, content-based filtering, collaborative filtering, and hybrid recommendation systems.
+The project explores the complete Machine Learning workflow, including data collection, exploratory data analysis, preprocessing, feature engineering, recommendation algorithms, model evaluation, application development, and deployment.
 
-> **Project Status:** 🚧 Under Development
+> **Project Status:** 🚧 In Development
 
 ---
 
 ## 📌 Overview
 
-The Movie Recommendation System aims to provide personalized movie suggestions by analyzing movie metadata, genres, user ratings, and viewing preferences.
+Movie recommendation systems help users discover relevant movies based on their interests, preferences, and interactions.
 
-The project focuses on understanding and implementing recommendation algorithms while following professional Machine Learning development practices.
+This project aims to develop a recommendation engine that combines movie metadata and user-rating patterns to generate meaningful and personalized movie suggestions.
 
-It covers the complete ML workflow, from dataset collection and exploratory data analysis to model development, evaluation, application development, and deployment.
+The system will explore multiple recommendation approaches, evaluate their performance, and integrate the resulting models into an interactive web application.
 
-## 🎯 Objectives
+The primary objective is to build a well-structured, modular, tested, and deployable Machine Learning project while developing a practical understanding of recommendation systems.
 
-- Understand recommendation systems and their applications.
-- Explore and analyze movie datasets.
-- Perform data cleaning and preprocessing.
-- Implement different recommendation algorithms.
-- Compare recommendation techniques using appropriate evaluation metrics.
-- Develop an interactive movie recommendation application.
+## 🎯 Project Objectives
+
+- Understand the fundamentals of recommendation systems.
+- Collect and analyze movie metadata and user-rating datasets.
+- Perform exploratory data analysis (EDA).
+- Clean, preprocess, and transform raw datasets.
+- Develop different recommendation algorithms.
+- Implement content-based and collaborative filtering.
+- Explore hybrid recommendation techniques.
+- Evaluate and compare recommendation models.
+- Build an interactive movie recommendation application.
 - Deploy the application for public access.
-- Follow modular coding, testing, documentation, and version control practices.
+- Follow professional software development and Machine Learning practices.
 
 ## ✨ Planned Features
 
-- **Popularity-Based Recommendations:** Recommend popular and highly rated movies.
-- **Content-Based Filtering:** Suggest movies based on genres, descriptions, keywords, and other movie features.
-- **Collaborative Filtering:** Generate recommendations using user-rating patterns.
-- **Hybrid Recommendation System:** Combine multiple recommendation techniques.
-- **Movie Search:** Search for movies using their titles.
-- **Personalized Recommendations:** Generate suggestions based on user preferences.
-- **Movie Details:** Display relevant movie information and posters.
-- **Interactive Web Application:** Provide a user-friendly interface for discovering movies.
+| Feature | Description | Status |
+|---|---|---|
+| Movie Exploration | Explore movie information, genres, and metadata | Planned |
+| Popularity-Based Recommendations | Recommend movies using popularity and rating statistics | Planned |
+| Content-Based Filtering | Recommend movies based on genres, descriptions, and other features | Planned |
+| Collaborative Filtering | Generate recommendations using user-movie interactions | Planned |
+| Hybrid Recommendations | Combine multiple recommendation approaches | Planned |
+| Movie Search | Search for movies by title | Planned |
+| Personalized Recommendations | Generate suggestions based on user preferences | Planned |
+| Movie Details | Display movie information and posters | Planned |
+| Interactive Web Application | Provide a user-friendly movie discovery interface | Planned |
 
-*Features will be implemented progressively during development.*
+*Features will be implemented and documented progressively.*
 
 ## 🛠️ Technology Stack
 
-| Category                  | Technologies                                       |
-| ------------------------- | -------------------------------------------------- |
-| Programming Language      | Python                                             |
-| Data Manipulation         | NumPy, Pandas                                      |
-| Data Visualization        | Matplotlib, Seaborn, Plotly                        |
-| Machine Learning          | Scikit-learn                                       |
-| Recommendation Algorithms | TF-IDF, Cosine Similarity, Collaborative Filtering |
-| Model Serialization       | Joblib                                             |
-| Web Application           | Streamlit                                          |
-| Backend API               | FastAPI                                            |
-| Testing                   | Pytest                                             |
-| Code Quality              | Ruff                                               |
-| Development Environment   | Jupyter Notebook, VS Code                          |
-| Version Control           | Git, GitHub                                        |
-| Deployment                | Streamlit Community Cloud / Other suitable hosting |
+| Category | Technologies |
+|---|---|
+| Programming Language | Python |
+| Data Manipulation | NumPy, Pandas |
+| Data Visualization | Matplotlib, Seaborn, Plotly |
+| Machine Learning | Scikit-learn |
+| Recommendation Techniques | TF-IDF, Cosine Similarity, Collaborative Filtering |
+| Model Serialization | Joblib |
+| Development Environment | Jupyter Notebook, VS Code |
+| Web Application | Streamlit |
+| Backend API | FastAPI (optional, if required) |
+| Testing | Pytest |
+| Code Quality | Ruff |
+| Version Control | Git, GitHub |
+| Deployment | Streamlit Community Cloud / Suitable Hosting Platform |
+
+## 📊 Datasets
+
+The project uses movie metadata and user-rating information from publicly available datasets.
+
+### 1. MovieLens Latest Small Dataset
+
+**Source:** [GroupLens – MovieLens Datasets](https://grouplens.org/datasets/movielens/)
+
+Provides movie information, user ratings, tags, and external movie identifiers.
+
+| File | Description |
+|---|---|
+| `movies.csv` | Movie IDs, titles, and genres |
+| `ratings.csv` | User ratings and timestamps |
+| `tags.csv` | User-generated movie tags |
+| `links.csv` | IMDb and TMDB movie identifiers |
+
+**Primary use cases:**
+- Collaborative filtering.
+- User-movie interaction analysis.
+- Rating-based evaluation.
+- Mapping MovieLens movie IDs to external movie identifiers.
+
+### 2. The Movies Dataset
+
+**Source:** [The Movies Dataset – Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
+
+The project also uses the `movies_metadata.csv` file, which provides additional movie information.
+
+Relevant fields include:
+
+- Movie titles and original titles.
+- Genres.
+- Movie descriptions and overviews.
+- Popularity scores.
+- Vote averages and vote counts.
+- Release dates.
+- Poster paths.
+- Original language.
+
+**Primary use cases:**
+- Content-based filtering.
+- Movie feature extraction.
+- Genre and description analysis.
+- Movie information and metadata enrichment.
+
+### Dataset Integration
+
+MovieLens and The Movies Dataset may be connected through external movie identifiers.
+
+The intended mapping is:
+
+`MovieLens links.csv (tmdbId) → movies_metadata.csv (id)`
+
+The identifiers will be validated before merging datasets.
+
+> **Data handling:** Original datasets will remain unchanged in the local `data/raw/` directory. Downloaded datasets and generated data files will not be committed to the public repository. Dataset sources and applicable usage conditions will be documented.
+
+## 🧠 Recommendation Approaches
+
+The project will progressively implement and compare the following techniques.
+
+### 1. Popularity-Based Filtering
+
+Recommends movies using popularity indicators such as rating counts and average ratings.
+
+### 2. Content-Based Filtering
+
+Recommends movies based on similarities between their features.
+
+Potential techniques include:
+- Genre-based similarity.
+- Text vectorization using TF-IDF.
+- Cosine similarity.
+- Movie description and metadata analysis.
+
+### 3. Collaborative Filtering
+
+Uses user-movie interaction patterns to identify movies that may interest a particular user.
+
+Potential techniques include:
+- User-based collaborative filtering.
+- Item-based collaborative filtering.
+- Matrix factorization.
+- Singular Value Decomposition (SVD).
+
+### 4. Hybrid Recommendation System
+
+Combines multiple recommendation approaches to generate more balanced and personalized recommendations.
 
 ## 📂 Project Structure
+
+The repository will follow a modular structure as the project develops.
 
 ```text
 Movie-Recommendation-System/
 │
 ├── data/
 │   ├── raw/
-│   └── processed/
+│   │   ├── movielens-latest-small/
+│   │   └── the-movies-dataset/
+│   ├── processed/
+│   └── README.md
 │
 ├── notebooks/
+│   ├── 01-data-understanding.ipynb
+│   ├── 02-exploratory-data-analysis.ipynb
+│   └── 03-data-preprocessing.ipynb
 │
 ├── src/
+│   ├── data/
+│   ├── features/
+│   ├── recommenders/
+│   └── evaluation/
 │
 ├── models/
 │
@@ -79,70 +189,49 @@ Movie-Recommendation-System/
 │
 ├── docs/
 │
+├── reports/
+│
 ├── README.md
+├── requirements.txt
 ├── .gitignore
-└── requirements.txt
+└── LICENSE
 ```
 
-### Directory Description
-
-| Directory         | Description                                        |
-| ----------------- | -------------------------------------------------- |
-| `data/raw/`       | Original datasets                                  |
-| `data/processed/` | Cleaned and processed datasets                     |
-| `notebooks/`      | Jupyter notebooks for analysis and experimentation |
-| `src/`            | Reusable Python modules and ML implementation      |
-| `models/`         | Trained recommendation models and artifacts        |
-| `app/`            | Interactive application                            |
-| `tests/`          | Automated tests                                    |
-| `docs/`           | Project documentation and technical references     |
-
-## 📊 Dataset
-
-The project will initially use the **MovieLens Latest Small Dataset** provided by GroupLens Research.
-
-The dataset contains movie information, user ratings, tags, and genre information.
-
-**Dataset Source:** [MovieLens Datasets — GroupLens](https://grouplens.org/datasets/movielens/)
-
-Additional movie metadata and poster information may be integrated using the TMDB API.
-
-## 🧠 Recommendation Techniques
-
-The project will explore the following recommendation approaches:
-
-| Technique                  | Description                                             | Status  |
-| -------------------------- | ------------------------------------------------------- | ------- |
-| Popularity-Based Filtering | Recommends popular movies using rating statistics       | Planned |
-| Content-Based Filtering    | Recommends movies using their features and similarities | Planned |
-| Collaborative Filtering    | Uses user-item interaction patterns                     | Planned |
-| Hybrid Recommendation      | Combines multiple recommendation approaches             | Planned |
+*This represents the planned project structure. Additional modules and files will be added when required.*
 
 ## 🔄 Development Workflow
 
 The project will follow these development stages:
 
-1. Project Setup and Repository Configuration
-2. Dataset Collection and Understanding
-3. Exploratory Data Analysis (EDA)
-4. Data Cleaning and Preprocessing
-5. Feature Engineering
-6. Popularity-Based Recommendation
-7. Content-Based Filtering
-8. Collaborative Filtering
-9. Hybrid Recommendation System
-10. Model Evaluation and Comparison
-11. Application Development
-12. Testing and Optimization
-13. Deployment
-14. Documentation and Final Project Release
+| Phase | Development Stage |
+|---|---|
+| 01 | Project Setup and Repository Configuration |
+| 02 | Dataset Collection and Understanding |
+| 03 | Exploratory Data Analysis |
+| 04 | Data Cleaning and Preprocessing |
+| 05 | Feature Engineering |
+| 06 | Popularity-Based Recommendation |
+| 07 | Content-Based Filtering |
+| 08 | Collaborative Filtering |
+| 09 | Hybrid Recommendation System |
+| 10 | Model Evaluation and Comparison |
+| 11 | Application Development |
+| 12 | Testing and Optimization |
+| 13 | Deployment |
+| 14 | Documentation and Final Release |
 
 ## ⚙️ Installation and Setup
+
+### Prerequisites
+
+- Python 3.10 or later.
+- Git.
+- Jupyter Notebook or Jupyter support in VS Code.
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Movie-Recommendation-System.git
+git clone https://github.com/gursimranai/Movie-Recommendation-System.git
 ```
 
 ### 2. Navigate to the project directory
@@ -157,7 +246,7 @@ cd Movie-Recommendation-System
 python -m venv .venv
 ```
 
-### 4. Activate the environment
+### 4. Activate the virtual environment
 
 **Windows PowerShell:**
 
@@ -172,77 +261,87 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-*Installation and execution instructions will be updated as the application and ML pipeline become available.*
+### 6. Launch Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+> Dataset download and placement instructions will be documented in `data/README.md`.
 
 ## 📈 Model Evaluation
 
-Recommendation algorithms will be evaluated using appropriate metrics depending on the recommendation task.
+Recommendation models will be evaluated according to their respective tasks.
 
-Planned evaluation metrics include:
+### Ranking and Recommendation Metrics
 
-- Precision\@K
-- Recall\@K
-- Mean Average Precision (MAP\@K)
-- Normalized Discounted Cumulative Gain (NDCG\@K)
-- Root Mean Squared Error (RMSE)
+- Precision@K
+- Recall@K
+- Mean Average Precision (MAP@K)
+- Normalized Discounted Cumulative Gain (NDCG@K)
+
+### Rating Prediction Metrics
+
 - Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+
+The evaluation process will also consider recommendation diversity, coverage, and the quality of suggested movies where appropriate.
+
+## 🧪 Testing and Code Quality
+
+The project will use automated testing and code quality tools to improve reliability and maintainability.
+
+- **Pytest:** Unit and integration testing.
+- **Ruff:** Python linting and code quality checks.
+- **Modular architecture:** Reusable components and separation of concerns.
+- **Documentation:** Clear explanations of implementation decisions and experiments.
 
 ## 🚀 Deployment
 
-The final system is intended to be deployed as an interactive web application.
+The final recommendation system is intended to be available through an interactive web application.
 
-The deployment process will include:
+Planned deployment activities include:
 
-- Model integration.
-- Application configuration.
-- Dependency management.
-- Environment variable configuration.
-- Production testing.
-- Public deployment.
+- Integrating recommendation models.
+- Developing the application interface using Streamlit.
+- Managing dependencies and configuration.
+- Testing application functionality.
+- Deploying the application to a suitable hosting platform.
 
 **Live Demo:** Coming Soon
 
-## 🧪 Testing
+## 🗺️ Project Roadmap
 
-Pytest will be used to validate individual components and ensure the recommendation pipeline behaves as expected.
-
-Testing will cover:
-
-- Data loading and preprocessing.
-- Recommendation logic.
-- Model outputs.
-- Input validation.
-- Application integration.
-
-## 📚 Documentation
-
-Additional technical documentation, methodology, architecture diagrams, and experimental results will be maintained in the `docs/` and `reports/` directories as the project develops.
-
-## 🗺️ Roadmap
-
-- [x] Initialize project structure and development environment.
-- [ ] Collect and understand the movie dataset.
+- [x] Initialize the project folder structure.
+- [x] Collect and place the initial datasets locally.
+- [ ] Complete repository documentation.
+- [ ] Configure the development environment.
+- [ ] Create and complete data understanding notebook.
 - [ ] Perform exploratory data analysis.
-- [ ] Implement data preprocessing.
+- [ ] Implement data cleaning and preprocessing.
 - [ ] Develop popularity-based recommendations.
-- [ ] Develop content-based recommendations.
+- [ ] Implement content-based filtering.
 - [ ] Implement collaborative filtering.
 - [ ] Develop a hybrid recommendation system.
-- [ ] Evaluate and compare recommendation models.
-- [ ] Build an interactive web application.
-- [ ] Implement automated tests.
+- [ ] Evaluate and compare recommendation approaches.
+- [ ] Build the interactive web application.
+- [ ] Add automated tests.
 - [ ] Deploy the application.
 - [ ] Complete technical documentation.
 
+## 📚 Documentation
+
+Technical documentation, experiment results, architecture diagrams, and implementation notes will be maintained in the `docs/` and `reports/` directories as development progresses.
+
 ## 🤝 Contributions
 
-Contributions, suggestions, and improvements are welcome.
+Suggestions, improvements, and contributions are welcome.
 
-If you find an issue or have an idea for improvement, feel free to open an issue or submit a pull request.
+If you discover an issue or have an idea for improving the project, feel free to open an issue or submit a pull request.
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The project license will be specified before the public release. Please refer to the dataset providers' terms for the applicable dataset usage conditions.
 
 ---
 
@@ -254,6 +353,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-⭐ If you find this project interesting, consider giving it a star!
+⭐ If you find this project interesting, consider giving the repository a star.
 
-**Built with Python and Machine Learning.**
+**Built with Python, Machine Learning, and curiosity.**
