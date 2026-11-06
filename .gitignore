@@ -15,10 +15,13 @@ build/
 
 # Environment variables
 .env
-
-# Data
+# Raw datasets
 data/raw/*
+!data/raw/.gitkeep
+
+# Processed datasets
 data/processed/*
+!data/processed/.gitkeep
 
 # Model artifacts
 models/*
